@@ -72,7 +72,7 @@ wsServer.on("request", (request: any) => {
           author: userName,
           color: userColor,
         };
-        history.unshift(msg);
+        history.push(msg);
         history = history.slice(-100);
         // broadcast message to all connected clients
         let json = JSON.stringify({ type: "message", data: msg });
